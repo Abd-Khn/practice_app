@@ -16,8 +16,10 @@ class Login extends StatelessWidget {
         title: Text(
           "Alfons",
           style: GoogleFonts.poppins(
-            textStyle:
-                TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+            textStyle: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ),
         backgroundColor: const Color(0xFF280137),
@@ -26,6 +28,7 @@ class Login extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(40.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             AuthHeading(
               mainTextSize: 25,
@@ -34,79 +37,90 @@ class Login extends StatelessWidget {
               mainText: 'Sign In \nto Alfons',
               subText: 'To connect with your Friends',
               subTextSize: 20,
-            ), //Object of AuthHeading Class is called for heading of Sign In Page
-            SizedBox(
-              height: 50,
             ),
-            AuthTextFields(
-                fontSize: 16,
-                icon: Icons.alternate_email,
-                iconSize: 18,
-                keyboardType: TextInputType.emailAddress,
-                hintText: "Email",
-                obscureText: false), //Object of AuthTextFields
-            SizedBox(
-              height: 25,
-            ),
-            AuthTextFields(
-                fontSize: 16,
-                icon: Icons.password,
-                iconSize: 18,
-                keyboardType: TextInputType.visiblePassword,
-                hintText: "Password",
-                obscureText: true),
-            SizedBox(
-              height: 50,
-            ),
-            RoundedLoadingButton(
-              width: 2000,
-              borderRadius: 5,
-              color: Color(0xFF280137),
-              controller: _loginBtnController,
-              onPressed: () {
-                print("Login Button is Pressed");
-              },
-              child: Text(
-                "Login",
-                style: GoogleFonts.poppins(
-                    color: Colors.white,
+            SizedBox(height: 50),
+            Expanded(
+              child: ListView(
+                children: [
+                  AuthTextFields(
                     fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 1),
+                    icon: Icons.alternate_email,
+                    iconSize: 18,
+                    keyboardType: TextInputType.emailAddress,
+                    hintText: "Email",
+                    obscureText: false,
+                  ),
+                  SizedBox(height: 25),
+                  AuthTextFields(
+                    fontSize: 16,
+                    icon: Icons.password,
+                    iconSize: 18,
+                    keyboardType: TextInputType.visiblePassword,
+                    hintText: "Password",
+                    obscureText: true,
+                  ),
+                  SizedBox(height: 50),
+                  RoundedLoadingButton(
+                    width: MediaQuery.of(context).size.width,
+                    borderRadius: 5,
+                    color: Color(0xFF280137),
+                    controller: _loginBtnController,
+                    onPressed: () {
+                      print("Login Button is Pressed");
+                    },
+                    child: Text(
+                      "Login",
+                      style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 1,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    "Forgot Password?",
+                    style: GoogleFonts.poppins(
+                      color: Colors.red,
+                      fontSize: 13,
+                      letterSpacing: 1,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Don't have an account?",
+                        style: GoogleFonts.poppins(
+                          color: Color(0xff808080),
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: 0.5,
+                        ),
+                      ),
+                      SizedBox(width: 5),
+                      GestureDetector(
+                        onTap: () {
+                          print("Sign Up");
+                        },
+                        child: Text(
+                          "Sign Up",
+                          style: GoogleFonts.poppins(
+                            color: Color(0xFF280137),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w800,
+                            letterSpacing: 1,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
-            SizedBox(
-              height: 40,
-            ),
-            Text(
-              "Forgot Password?",
-              style: GoogleFonts.poppins(
-                  color: Colors.red, fontSize: 13, letterSpacing: 1),
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Don't have an account?",
-                  style: GoogleFonts.poppins(
-                      color: Color(0xff808080),
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 0.5),
-                ),
-                Text(
-                  "  Sign Up",
-                  style: GoogleFonts.poppins(
-                      color: Color(0xFF280137),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 1),
-                ),
-              ],
-            )
           ],
         ),
       ),
