@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:practice_app/Views/Widgets/Auth/auth_text_fields.dart';
 import 'package:rounded_loading_button_plus/rounded_loading_button.dart';
 
 import '../Widgets/Auth/auth_heading.dart';
+import '../Widgets/Auth/auth_text_fields.dart';
 
-class Login extends StatelessWidget {
-  final RoundedLoadingButtonController _loginBtnController =
+class Register extends StatelessWidget {
+  final RoundedLoadingButtonController _registerBtnController =
       RoundedLoadingButtonController();
 
   @override
@@ -31,7 +31,7 @@ class Login extends StatelessWidget {
               mainTextSize: 25,
               logo: "assets/images/cat_logo.png",
               logoSize: 100,
-              mainText: 'Sign In \nto Alfons',
+              mainText: 'Sign Up \nto Alfons',
               subText: 'To connect with your Friends',
               subTextSize: 20,
             ), //Object of AuthHeading Class is called for heading of Sign In Page
@@ -46,7 +46,7 @@ class Login extends StatelessWidget {
                 hintText: "Email",
                 obscureText: false), //Object of AuthTextFields
             SizedBox(
-              height: 25,
+              height: 20,
             ),
             AuthTextFields(
                 fontSize: 16,
@@ -56,18 +56,28 @@ class Login extends StatelessWidget {
                 hintText: "Password",
                 obscureText: true),
             SizedBox(
+              height: 20,
+            ),
+            AuthTextFields(
+                fontSize: 16,
+                icon: Icons.lock_reset,
+                iconSize: 18,
+                keyboardType: TextInputType.visiblePassword,
+                hintText: "Confirm Password",
+                obscureText: true),
+            SizedBox(
               height: 50,
             ),
             RoundedLoadingButton(
               width: 2000,
               borderRadius: 5,
               color: Color(0xFF280137),
-              controller: _loginBtnController,
+              controller: _registerBtnController,
               onPressed: () {
-                print("Login Button is Pressed");
+                print("SignUp Button is Pressed");
               },
               child: Text(
-                "Login",
+                "Sign Up",
                 style: GoogleFonts.poppins(
                     color: Colors.white,
                     fontSize: 16,
@@ -76,12 +86,15 @@ class Login extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 40,
+              height: 15,
             ),
-            Text(
-              "Forgot Password?",
-              style: GoogleFonts.poppins(
-                  color: Colors.red, fontSize: 13, letterSpacing: 1),
+            Container(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "By registering, you agree to our terms and conditions",
+                style:
+                    GoogleFonts.poppins(color: Color(0xff808080), fontSize: 9),
+              ),
             ),
             SizedBox(
               height: 40,
@@ -90,7 +103,7 @@ class Login extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Don't have an account?",
+                  "Already Registered?",
                   style: GoogleFonts.poppins(
                       color: Color(0xff808080),
                       fontSize: 13,
@@ -98,7 +111,7 @@ class Login extends StatelessWidget {
                       letterSpacing: 0.5),
                 ),
                 Text(
-                  "  Sign Up",
+                  "  Sign In",
                   style: GoogleFonts.poppins(
                       color: Color(0xFF280137),
                       fontSize: 16,
