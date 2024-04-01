@@ -4,6 +4,7 @@
 <p>Screens of the App are attached Below</p>
 
 <p>SingUp Screen</p>
+
 ![signup](https://github.com/Abd-Khn/practice_app/assets/92436828/fc974ec8-5f2c-4832-95dd-0532bc4fb261)
 
 
