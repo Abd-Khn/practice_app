@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice_app/Views/Auth/forgot_password.dart';
+import 'package:practice_app/Views/Profile/profile_setup.dart';
 
 void main() {
   runApp(Alfons());
@@ -13,7 +13,7 @@ class Alfons extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Alfons',
-      home: ForgotPassword(),
+      home: ProfileSetup(),
     );
   }
 }

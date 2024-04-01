@@ -32,6 +32,7 @@ dependencies:
     sdk: flutter
   google_fonts: ^6.2.1
   rounded_loading_button_plus: ^3.0.1
+  circular_profile_avatar: ^2.0.5
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -65,6 +66,7 @@ flutter:
      - assets/images/logo_png.png
      - assets/images/cat_logo.png
      - assets/images/forgot_password.png
+     - assets/images/profileSetup_bg.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
